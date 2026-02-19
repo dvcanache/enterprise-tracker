@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: EnterpriseExpenseManagementSystem
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DRIVER_CLASS}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: ${DB_DIALECT}
+
+  app:
+    jwtSecret: ${JWT_SECRET}
+    jwtExpirationMs: ${JWT_EXP_TIME}
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        transport:
+          protocol: smtp
+        debug: true
+
+
+frontend:
+  url: ${FRONT_END_URL}
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+cloudinary:
+  cloud-name: ${CLOUD_NAME}
+  api-key: ${API_KEY}
+  api-secret: ${API_SECRET}
+  max-file-size: ${MAX_FILE_SIZE}
